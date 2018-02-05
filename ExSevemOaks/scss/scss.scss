@@ -1,1 +1,76 @@
 @import "variables";
+
+.logo{
+    max-width: $maxwidthlogo !important;
+    margin-top: -0.5em !important;
+}
+.image1{
+    padding-top: $paddingmobilimg;
+    margin-left: $marginmobilimg;
+    max-width: $maxwidthmobilimg;
+}
+
+.forimage{
+    position:relative;
+    text-align: center;
+    color:white;
+}
+.bottom-left{
+    position:absolute;
+    bottom:1em;
+    left:1.5em;
+    background-color: $colortextbox;
+    opacity:0.9;
+    margin-right: 7em;
+}
+
+.font1{
+    font-family: $fontinbox;
+    font-weight: bold;
+}
+.font2{
+    font-family: $fontinbox;
+}
+
+.img2{
+    margin-top: 1em;
+}
+
+hr{
+    border: 5px solid;
+}
+
+.events{
+    float:none;
+    width:auto;
+}
+.sevenoaks{
+    float:none;
+    width:auto;
+}
+
+@media screen and (min-width:600px){
+
+    .img2{
+        width:100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:1000px){
+    .events{
+        float:left
+    } 
+    .sevenoaks{
+        float:right;
+    }
+    
+    .logo{
+    max-width: 100% !important;
+    margin-top: -0.5em !important;
+}
+}
+
+
+
+

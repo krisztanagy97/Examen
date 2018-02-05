@@ -7,11 +7,16 @@
        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+       <link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css"/>
+        // Add the new slick-theme.css if you want the default styling
+        <link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css"/>
     </head>
    <body>
        
        <!---------------------------------NAVBAR------------------------->
-        <div class="container-fluid bg-warning">
+       <div class="header">
+           <div class="container">
+       <div class="container-fluid bg-warning">
             <div class="container">
                 <nav class="navbar navbar-default navbar-fixed-top ">
                         <div class="row gradient">
@@ -31,11 +36,11 @@
                             </div>
                             <div class="col-md-10 collapse navbar-collapse" id="myMenu">
                                 
-                                <ul class="nav navbar-nav navbar-right list-group">
+                                <ul class="nav navbar-nav navbar-right">
                                     <li>
                                         <a href="#about">ABOUT</a>
                                     </li>
-                                    <li>
+                                    <li class="active">
                                         <a href="#media">MEDIA</a>
                                     </li>
                                     <li>
@@ -51,14 +56,136 @@
                             </div>
                         </div>
                 </nav>
-            </div></div>
+           </div></div></div>
+     
+       <div class="container forimage">
+           <img class="image1" src="img/images/sevenoaks_01.jpg">
+           <div id="slide" class="bottom-left">
+               <h4><span class="font1">Welcome to SevenOaks website</span><span class="font2"> wich is run by the friends of SevenOaks.</span></h4>
+               <h4><span class="font1">Lorem ipsum</span><span class="font2"> wich is run by the friends of SevenOaks.</span></h4>
+           </div>
+           </div>
+      <div class="container">       
+        <div class="container">
+           <div class="row">
+                <div class="col-md-4">
+                    <img class="img2" src="img/images/sevenoaks_07.jpg">
+               </div>
+               <div class="col-md-4">
+                    <img class="img2" src="img/images/sevenoaks_09.jpg">
+               </div>
+               <div class="col-md-4">
+                    <img class="img2" src="img/images/sevenoaks_11.jpg">
+               </div>
+            </div>
+        </div>
 
-    
-       
-       
-       
+    <br><br>
+        <div class="events">
+        
+            <div class="row">
+                <div class="col">
+                    <h4 class="font3">UPCOMING EVENTS</h4>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="row"><h3>20</h3></div>
+                    <div class="row"><h4>JULY</h4></div>
+                </div>
+                <div class="col-xs-7">
+                     <div class="row"><h4>FAMILY SUNDAY</h4></div>
+                    <div class="row"><h5>Sunday   9:30am</h5></div>
+                </div>
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-primary">MORE</button>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="row"><h3>20</h3></div>
+                    <div class="row"><h4>JULY</h4></div>
+                </div>
+                <div class="col-xs-7">
+                     <div class="row"><h4>FAMILY SUNDAY</h4></div>
+                    <div class="row"><h5>Sunday   9:30am</h5></div>
+                </div>
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-primary">MORE</button>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col-xs-2">
+                    <div class="row"><h3>20</h3></div>
+                    <div class="row"><h4>JULY</h4></div>
+                </div>
+                <div class="col-xs-7">
+                     <div class="row"><h4>FAMILY SUNDAY</h4></div>
+                    <div class="row"><h5>Sunday   9:30am</h5></div>
+                </div>
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-primary">MORE</button>
+                </div>
+            </div>
+            
+        </div>
+           
+           <hr>
+        
+        <div class="sevenoaks">
+            
+            <div class="row">
+            <h3>Seveoaks</h3>
+                </div>
+            <div class="row">
+                <h5><div id="bacon"></div></h5>
+            </div>
+        </div>
+      
+      
+      
+      
+      
+      </div>
+       </div>
        <!-- Load Bootstrap JS --> 
        <script src="js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script> 
+       
+       <script>
+           $(document).ready(function()  {
+               $.getJSON('https://baconipsum.com/api/?callback=?', 
+                         { 'type':'meat-and-filler', 'start-with-lorem':'1', 'paras':'3' }, 
+                         function(baconGoodness)
+                         {
+                   if (baconGoodness && baconGoodness.length > 0)
+                   {
+                       $("#bacon").html('');
+                       for (var i = 0; i < baconGoodness.length; i++)
+                           $("#bacon").append('<p>' + baconGoodness[i] + '</p>');
+                       $("#bacon").show();
+                   }
+               });
+           });
+       </script>
+       <script src="slick-1.8.0/slick/slick.js"></script>
+       <script>
+       $('#slide').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              autoplaySpeed: 2000,
+});
+
+       </script>
    </body>
 </html>
